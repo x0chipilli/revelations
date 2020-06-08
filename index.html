@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <a-scene fog="type:linear; color:black">
+    <a-assets timeout="10000">
+      <img id="earth" src="earth.jpg">
+      <img id="grass" src="grass.jpg">
+      <img id="water" src="water.jpg">
+      <a-asset-item id="wippo-obj" src="wippo.obj"></a-asset-item>
+      <a-asset-item id="wippo-mtl" src="wippo.mtl"></a-asset-item>
+      <a-asset-img id="badtz-obj" src="badtz.obj"></a-asset-img>
+      <a-asset-img id="badtz-mtl" src="badtz.mtl"></a-asset-img>
+      <img id="jesus" src="jesus.jpg">
+    </a-assets>
+
+    <a-sky
+      src="#water"
+    ></a-sky>
+    <a-plane
+      src="#grass"
+      rotation="-90 0 0"
+      width="30"
+      height="30"
+    ></a-plane>
+
+    <a-obj-model
+      src="#wippo-obj"
+      mtl="#wippo-mtl"
+      position="-1 1 -2"
+      rotation="-90 20 0"
+      shadow
+    ></a-obj-model>
+    <a-obj-model
+      src="#badtz-obj"
+      mtl="#badtz-mtl"
+      position=".5 1 -2"
+      rotation="-90 -20 0"
+      shadow
+    ></a-obj-model>
+    <a-text
+      align="center"
+      value="quisiera saber \n quien o que\n soy u.u"
+      color="blue"
+      width="10"
+      height="20"
+      position="-2 3.5 -2"
+    ></a-text>
+    <a-text
+      align="center"
+      value="segundos n.n \n breves y maravillosos\nsegundos\n de interaccion \n pantalla-conciencia"
+      color="red"
+      width="10"
+      height="20"
+      position="2.2 3.5 -2"
+    ></a-text>
+
+    <a-entity
+      geometry="primitive: cylinder; height: 10; radius:2.3"
+      material="color: cyan; opacity: 0.4"
+      position="0 1 7"
+    ></a-entity>
+    <a-box
+      src="#jesus"
+      position="0 2.6 7"
+      depth="2.5"
+      height="2.5"
+      width="2.5"
+      animation="property: rotation; to: 360 360 360; loop: true; dur: 5000; easing: linear"
+      shadow
+    ></a-box>
+
+  </a-scene>
+
+  <script src="main.js"></script>
+</body>
+</html>
